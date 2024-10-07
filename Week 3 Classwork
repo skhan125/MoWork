@@ -10,6 +10,7 @@ int main()
     cin >> score; //get imput from keyboard 
     cout << "Here is the value you entered for score: " << score << endl;//echoing 
 
+
     //simple if statement  #1 
     //Testing for perfect score ==>PROBLEM 0 to 100
     /* Keyword if followed by condition(TEST) of equality followed by the block of code to be excecuted when the test returns true. Always put the test in parentheses equality operator is
@@ -21,3 +22,29 @@ int main()
         cout << "Great!!" << endl;
     }//curly braces are needed when the if statement has more than one line of code in the block
 */ 
+    //if then else statements have 2 pathways, one for true and two for false #2
+    //Check to see if the score entered is EVEN or ODD -->PROBLEM 
+*/  if ((score % 2) == 0) // % is the modulus operater that returns the remainder 
+    {//gives the remainder to be compared to 0 
+        cout << "\n Score is even!\n\n"; //TRUE Body 
+    }
+    else 
+    {//what follows else is false body 
+        cout << "\n Score is odd!\n\n;
+    }
+*/
+    //if then else if statement, multiple pathways #3
+    //Print the letter grade for the given score -->PROBLEM 
+    if (score > 89)//(score >= 90)
+        cout << "Leter Grade is A" << endl; 
+    else if (score >= 80)//(score  > 79)
+        cout << "Letter grade is B" << endl; 
+    else if (score >= 70) 
+        cout << "Letter grade is C" << endl;
+    else if (score >= 60)
+        cout << "Letter grade is D" << endl;
+    else // This is called default else //catch all 
+        cout << "Letter grade is F" << endl; 
+
+    return 0; 
+}
