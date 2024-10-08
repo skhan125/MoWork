@@ -1,5 +1,35 @@
-    //ALTERNATIVE LOGIC
-    //Rewrite the above so that the choice of F grade is first. 
+ #include <iostream>
+using namespace std;
+
+int main()
+{
+    int score; // declare an integer variable
+    cout << "Please enter a value for score: "; // Prompt the user 
+    cin >> score; // get input from keyboard 
+    cout << "Here is the value you entered for score: " << score << endl; // echoing 
+
+    // simple if statement #1 
+    // Testing for perfect score ==> PROBLEM 0 to 100
+    if (score == 100) // Check for a perfect score
+    { 
+        cout << "Score is perfect!!!" << endl;
+        cout << "Bravo!!" << endl;
+        cout << "Great!!" << endl;
+    } 
+
+    // if then else statements have 2 pathways, one for true and one for false #2
+    // Check to see if the score entered is EVEN or ODD 
+    if ((score % 2) == 0) 
+    { 
+        cout << "\nScore is even!\n\n"; // TRUE Body 
+    }
+    else 
+    { 
+        cout << "\nScore is odd!\n\n"; // Indicates score is odd
+    }
+
+    // ALTERNATIVE LOGIC
+    // Rewrite the above so that the choice of F grade is first.
     if (score < 60)
         cout << "Letter Grade is F" << endl; 
     else if (score < 70)
@@ -11,10 +41,10 @@
     else 
         cout << "Letter Grade is A" << endl; 
 
-    //Coding for RANGE with logical operators USING NESTED IF ELSE STATEMENTS 
-    //Make sure the braces are matching 
-    // watch the braces to make sure if matches else (Dangling else problem)
-    if ((score >= 90) && (score <= 100)) // range test
+    // Coding for RANGE with logical operators USING NESTED IF ELSE STATEMENTS 
+    // Make sure the braces are matching 
+    // Watch the braces to make sure if matches else (Dangling else problem)
+    if ((score >= 90) && (score <= 100)) // Range test for A grade
         cout << "Your grade is A." << endl; 
     else 
     {
@@ -34,11 +64,10 @@
         }
     }
 
-    //#5 
-    //Using conditional operator ?: to find out if the score is odd/even 
-    //Short version if else --> works for single line bodies 
-    (score % 2 == 0) ? cout << "\n Score is even!\n" : cout << "\n Score is odd!\n"; // Fixed the conditional operator syntax
+    // Using conditional operator ?: to find out if the score is odd/even 
+    // Short version if else --> works for single line bodies 
+    (score % 2 == 0) ? cout << "\nScore is even!\n" : cout << "\nScore is odd!\n"; // Fixed the conditional operator syntax
 
-    //system("pause");
+    // system("pause"); // Uncomment if you want to pause the console before exiting
     return 0; 
 }
