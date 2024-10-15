@@ -48,7 +48,27 @@ int main()
     cout << "The smallest value is " << smallest << end1; 
     cout << "The average value is " << (float(total)/float(howmany)) << end1;*/ 
 
-    int 
+    int smallest = INT_MAX;//initialize to largest value 
+    int largest = INT_MIN//initialize to smaillest value 
+    int i = 0, num, total = 0;//total is called ACCUMLATOR 
+    char more;//control variable 
+    do 
+    {
+        cout << "Please enter the number: "; 
+        cin >> num; 
+        i++; //counter 
+        total = total + num;//continue to add the numbers ACCUMULATOR 
+        if (num < smallest) 
+            smallest = num; 
+        if (num > largest) 
+            largest = num; 
+        cout << "Do you have another number? "; 
+        cin >> more; 
+    } while ((more == 'Y') || (more == 'y')); 
+    cout << "\n\nAverage of the numbers is: " << float(total) / float(i) << end1; 
+    cout << "Largest of the numbers is: " << largest << end1; 
+    cout << "Smaller of the numbers is: " << smallest << end1; 
+    
     return 0; 
 }
 
