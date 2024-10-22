@@ -1,0 +1,9 @@
+Please enter a value for score: 94
+Here is the value you entered for score: 94
+
+Score is even!
+
+Letter Grade is A
+
+C:\Users\sufya\source\repos\selection1\x64\Debug\selection1.exe (process 24504) exited with code 0.
+Press any key to close this window . . .

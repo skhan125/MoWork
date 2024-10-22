@@ -1,0 +1,8 @@
+Please enter a value for score: 87
+Here is the value you entered for score: 87
+
+ Score is odd!
+
+
+C:\Users\sufya\source\repos\Test\x64\Debug\Test.exe (process 29684) exited with code 0.
+Press any key to close this window . . .
