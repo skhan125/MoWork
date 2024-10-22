@@ -1,0 +1,17 @@
+
+Please enter a value for score: 81
+
+ Here is the value you entered 81
+
+What would you like to do with this score? :
+1. Perfect Score Check
+2. Even/Odd Check
+3. Letter Grade Check
+4. Conditional operator used for Even/Odd Check
+9. Quit
+2
+
+Score is Odd!
+
+C:\Users\sufya\source\repos\TestSaad\x64\Debug\TestSaad.exe (process 11988) exited with code 0.
+Press any key to close this window . . .
