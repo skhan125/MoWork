@@ -1,0 +1,6 @@
+
+Function that does something
+
+
+C:\Users\sufya\source\repos\TestSaad\x64\Debug\TestSaad.exe (process 17464) exited with code 0.
+Press any key to close this window . . .

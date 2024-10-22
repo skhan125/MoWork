@@ -1,0 +1,5 @@
+Please enter the number for the factorial: 5
+The factorial of 5 is 120
+
+C:\Users\sufya\source\repos\TestSaad\x64\Debug\TestSaad.exe (process 18240) exited with code 0.
+Press any key to close this window . . .

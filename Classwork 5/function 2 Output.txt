@@ -1,0 +1,6 @@
+is value i
+50
+50
+
+C:\Users\sufya\source\repos\TestSaad\x64\Debug\TestSaad.exe (process 19172) exited with code 0.
+Press any key to close this window . . .

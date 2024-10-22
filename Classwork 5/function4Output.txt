@@ -1,0 +1,5 @@
+Please enter two integers:20 24
+The product of 20 and 24 is: 480
+
+C:\Users\sufya\source\repos\TestSaad\x64\Debug\TestSaad.exe (process 9820) exited with code 0.
+Press any key to close this window . . .
