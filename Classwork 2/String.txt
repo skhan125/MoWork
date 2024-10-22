@@ -1,0 +1,25 @@
+
+Please enter the values for the following variables...
+Enter the ID: 555
+Enter the full name: Mohammad Khan
+Length of the student name is:  13
+Enter the GPA: 3.56
+
+Student first name:                     Mohammad
+Student last name:                      Khan
+My sister's name:               Farah
+Using concatenation to get full name:   Mohammad Khan
+Before swap:
+ first: one
+ second: two
+
+
+After swap:
+ first: two
+ second: one
+After swap:
+ first: Mohammad
+ fname: two
+
+C:\Users\sufya\source\repos\Week 2\x64\Debug\Week 2.exe (process 7132) exited with code 0.
+Press any key to close this window . . .
