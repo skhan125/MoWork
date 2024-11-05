@@ -1,0 +1,14 @@
+4  2
+1  2
+6  1
+4  5
+1  5
+5  4
+6  2
+2  6
+3  5
+6  5
+
+
+C:\Users\sufya\source\repos\TestSaad\x64\Debug\TestSaad.exe (process 16252) exited with code 0.
+Press any key to close this window . . .

@@ -1,0 +1,26 @@
+Please enter the label information:
+Mary
+Smith
+55555
+Mary    Smith
+55555
+
+Mohammad        Khan
+60101
+
+Ben     Noble
+99999
+Please enter the label information:
+Rahul
+Patel
+60120
+Rahul   Patel
+60120
+
+
+ Object destroyed
+
+ Object destroyed
+
+C:\Users\sufya\source\repos\TestSaad\x64\Debug\TestSaad.exe (process 7804) exited with code 0.
+Press any key to close this window . . .

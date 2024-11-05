@@ -1,0 +1,10 @@
+Enter the person's first name, last name, and zip: Mohammad
+Khan
+60101
+Mohammad        Khan
+60101
+
+John    Smith
+60101
+
+Enter the person's first name, last name, and zip:
