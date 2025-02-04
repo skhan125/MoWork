@@ -1,0 +1,173 @@
+// Fig. 8.4: fig08_04.cpp
+// Pointer operators & and *.
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a{7}; // initialize a with 7
+    int* aPtr = &a; // initialize aPtr with the address of int variable a
+
+    cout << "The address of a is " << &a
+         << "\nThe value of aPtr is " << aPtr;
+
+    cout << "\n\nThe value of a is " << a
+         << "\nThe value of *aPtr is " << *aPtr << endl;
+
+    return 0;
+}
+
+// Fig. 8.6: fig08_06.cpp
+// Pass-by-value used to cube a variable's value.
+#include <iostream>
+using namespace std;
+
+int cubeByValue(int); // prototype
+
+int main() {
+    int number{5};
+
+    cout << "The original value of number is " << number;
+
+    number = cubeByValue(number); // pass number by value to cubeByValue
+
+    cout << "\nThe new value of number is " << number << endl;
+
+    return 0;
+}
+
+// calculate and return cube of integer argument
+int cubeByValue(int n) {
+    return n * n * n; // cube local variable n and return result
+}
+
+// Fig. 8.7: fig08_07.cpp
+// Pass-by-reference with a pointer argument used to cube a variable's value.
+#include <iostream>
+using namespace std;
+
+void cubeByReference(int*); // prototype
+
+int main() {
+    int number{5};
+
+    cout << "The original value of number is " << number;
+
+    cubeByReference(&number); // pass number address to cubeByReference
+
+    cout << "\nThe new value of number is " << number << endl;
+
+    return 0;
+}
+
+// calculate cube of *nPtr; modifies variable number in main
+void cubeByReference(int* nPtr) {
+    *nPtr = *nPtr * *nPtr * *nPtr; // cube *nPtr
+}
+
+// Fig. 8.10: fig08_10.cpp
+// Using a nonconstant pointer to constant data correctly.
+#include <iostream>
+using namespace std;
+
+void f(const int*); // prototype
+
+int main() {
+    int y{0};
+
+    f(&y); // Pass the address of y to the function
+
+    return 0;
+}
+
+// Function that uses a constant pointer without modifying the data
+void f(const int* xPtr) {
+    cout << "The value pointed to by xPtr is " << *xPtr << endl;
+    // No modification is attempted here since xPtr points to constant data
+}
+
+// Fig. 8.11: fig08_11.cpp
+// Working with a constant pointer to nonconstant data.
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int x, y;
+
+    // ptr is a constant pointer to an integer that can be modified
+    // through ptr, but ptr always points to the same memory location.
+    int* const ptr{&x}; // const pointer must be initialized
+
+    *ptr = 7; // Modify the value of x through the pointer
+
+    // Uncommenting the next line would cause an error:
+    // ptr = &y; // Not allowed: ptr is const and cannot be reassigned
+
+    cout << "The value of x is: " << x << endl;
+
+    return 0;
+}
+
+// Fig. 8.12: fig08_12.cpp
+// Working with a constant pointer to constant data.
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int x{5}, y;
+
+    // ptr is a constant pointer to a constant integer.
+    // ptr always points to the same location, and the integer
+    // at that location cannot be modified.
+    const int* const ptr{&x}; // const pointer to const data
+
+    // Output the value of the integer pointed to by ptr
+    cout << *ptr << endl;
+
+    // The following lines would cause errors and are commented out:
+    // *ptr = 7; // error: *ptr is const; cannot modify the value
+    // ptr = &y; // error: ptr is const; cannot assign a new address
+
+    return 0;
+}
+
+// Fig. 8.14: Using sizeof operator to determine standard data type sizes.
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    char c;
+    short s;
+    int i;
+    long l;
+    long long ll;
+    float f;
+    double d;
+    long double ld;
+    int array[20];
+    int* ptr = array;
+
+    cout << "sizeof(char) = " << sizeof(char)
+         << "\nsizeof c = " << sizeof c
+         << "\nsizeof(short) = " << sizeof(short)
+         << "\nsizeof s = " << sizeof s
+         << "\nsizeof(int) = " << sizeof(int)
+         << "\nsizeof i = " << sizeof i
+         << "\nsizeof(long) = " << sizeof(long)
+         << "\nsizeof l = " << sizeof l
+         << "\nsizeof(long long) = " << sizeof(long long)
+         << "\nsizeof ll = " << sizeof ll
+         << "\nsizeof(float) = " << sizeof(float)
+         << "\nsizeof f = " << sizeof f
+         << "\nsizeof(double) = " << sizeof(double)
+         << "\nsizeof d = " << sizeof d
+         << "\nsizeof(long double) = " << sizeof(long double)
+         << "\nsizeof ld = " << sizeof ld
+         << "\nsizeof array = " << sizeof array
+         << "\nsizeof ptr = " << sizeof ptr
+         << endl;
+
+    return 0;
+}
