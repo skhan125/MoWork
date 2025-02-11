@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+class ArrayDemo
+{
+public:
+    ArrayDemo();
+    ArrayDemo(int newval);
+    void setVal(int newval);
+
+private:
+    int val;
+};
+
+ArrayDemo::ArrayDemo()
+{
+    val = 0;
+}
+
+ArrayDemo::ArrayDemo(int newval)
+{
+    val = newval;
+}
+
+void ArrayDemo::setVal(int newval)
+{
+    val = newval;
+}
+
+int main()
+{
+    ArrayDemo *arr = new ArrayDemo[5];
+    for (int i = 0; i < 5; i++)
+        arr[i].setVal(i);
+
+    return 0;
+}
