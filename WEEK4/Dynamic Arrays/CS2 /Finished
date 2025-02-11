@@ -1,0 +1,107 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+// Adds an entry to the dynamic array, returning a pointer to the
+// expanded array. size should contain the size of the array. It
+// will be updated when the array is expanded.
+string* addEntry(string *dynamicArray, int &size, string newEntry);
+
+// Removes an entry from the dynamic array, returning a pointer to the
+// smaller array. size should contain the size of the array. It
+// will be updated when the element is deleted. If the entry is not
+// found in the array, the original (unmodified) array will be returned.
+string* deleteEntry(string *dynamicArray, int &size, string entryToDelete);
+
+// Prints the entries in the list
+void print(string *dynamicArray, int size);
+
+int main()
+{
+    // Make an array and put some names in it
+    int size = 5;
+    string *names = new string[size];
+    names[0] = "Neil";
+    names[1] = "Chris";
+    names[2] = "Heather";
+    names[3] = "Walt";
+    names[4] = "Apu";
+
+    cout << "Initial list:" << endl;
+    print(names, size);
+
+    // Add some names
+    names = addEntry(names, size, "Ned");
+    names = addEntry(names, size, "Seymour");
+    cout << "After adding names:" << endl;
+    print(names, size);
+
+    // Delete some names
+    names = deleteEntry(names, size, "Chris");
+    names = deleteEntry(names, size, "Joe"); // Non-existent name
+    names = deleteEntry(names, size, "Ned");
+    cout << "After deleting names:" << endl;
+    print(names, size);
+
+    // Delete array
+    delete[] names;
+    return 0;
+}
+
+string* addEntry(string *dynamicArray, int &size, string newEntry)
+{
+    string *newArray = new string[size + 1];
+    for (int i = 0; i < size; i++)
+    {
+        newArray[i] = dynamicArray[i];
+    }
+    newArray[size] = newEntry;
+    size++;
+    delete[] dynamicArray;
+    return newArray;
+}
+
+string* deleteEntry(string *dynamicArray, int &size, string entryToDelete)
+{
+    string *result = dynamicArray;
+    int index_of_entry_to_delete = -1;
+    for (int i = 0; i < size; i++)
+    {
+        if (dynamicArray[i] == entryToDelete)
+        {
+            index_of_entry_to_delete = i;
+            break;
+        }
+    }
+
+    if (index_of_entry_to_delete == -1)
+    {
+        return result;
+    }
+    else
+    {
+        result = new string[size - 1];
+        int index_new_array = 0;
+        for (int i = 0; i < size; i++)
+        {
+            if (i == index_of_entry_to_delete)
+            {
+                continue;
+            }
+            result[index_new_array] = dynamicArray[i];
+            index_new_array++;
+        }
+
+        size--;
+        delete[] dynamicArray;
+    }
+    return result;
+}
+
+void print(string *dynamicArray, int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        cout << dynamicArray[i] << endl;
+    }
+}
