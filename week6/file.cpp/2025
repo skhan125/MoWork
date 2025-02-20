@@ -1,0 +1,88 @@
+//1. we will write to a file either create a new file or over write it
+//2. we will read from a pre-existing file
+//3. We will append to a pre-existing file
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    int i, x, num[10];
+    string name;
+
+    /*1. create a file object
+      * 2. open the file properly
+      * 3. process the file
+      * 4. close the file
+    */
+
+    //STEP 1. we will write the name of the student followed by their score to the file on each line
+    ofstream fout; // create an object of ofstream to write to a file
+    
+    //STEP 2 attaching fout object to the file by the name datafile.txt and opening that file to write
+    fout.open("datafile.txt", ios::out); // name of file, mode of operation
+    
+    //STEP 3. process the file ---> write to the file
+    cout << "Here are the grades being written to the file " << endl;
+    for (i = 0; i < 5; i++)
+    {
+        cout << "Please enter the name followed by score: " << endl;
+        cin >> name >> x; // get the name and number
+        fout << name << " " << x << endl; // write name and x to the file followed by eoln
+    }
+    
+    cout << endl;
+    
+    //STEP 4. Close the file
+    fout.close();
+
+    //Read from the file
+    ifstream fin; // STEP 1
+    fin.open("datafile.txt", ios::in); // STEP 2
+    
+    //STEP 3
+    if (fin.is_open())
+    {
+        cout << "Here are the numbers read from the file " << endl;
+        for (i = 0; i < 5; i++)
+        {
+            fin >> name >> num[i]; // reading values from file and putting score into an array element
+            cout << name << " " << num[i] << endl; // test to see if we successfully read from file
+        }
+    }
+    
+    //STEP 4
+    fin.close();
+    cout << endl;
+
+    //Appending to existing file
+    fout.open("datafile.txt", ios::app); // opening file to append
+    cout << "Here is the second set of grades being written to the file " << endl;
+    for (i = 5; i < 10; i++)
+    {
+        cout << "Please enter the name followed by score: " << endl;
+        cin >> name >> x; // get the number in variable x
+        fout << name << " " << x << endl; // write x to the file followed by eoln
+    }
+    
+    cout << endl;
+    fout.close(); // CLOSE THE FILE
+
+    //Printing all ten values to the screen
+    fin.open("datafile.txt", ios::in); // STEP 2
+    if (fin.is_open())
+    {
+        cout << "Here are the numbers read from the file " << endl;
+        for (i = 0; i < 10; i++)
+        {
+            fin >> name >> num[i]; // reading values from file and putting score into an array element
+            cout << name << " " << num[i] << endl; // test to see if we successfully read from file
+        }
+    }
+    
+    //STEP 4
+    fin.close();
+    cout << endl;
+    return 0;
+}
